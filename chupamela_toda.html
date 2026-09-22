@@ -3,18 +3,32 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>21 de Septiembre 🌻</title>
+  <title>21 de Septiembre 🌻 | Para ti</title>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
 
   <style>
+    :root {
+      --yellow-light: #fff9e6;
+      --yellow-mid: #ffe082;
+      --yellow-deep: #fbc02d;
+      --orange-deep: #e65100;
+      --orange-warm: #f57f17;
+      --brown-dark: #3e2723;
+      --brown-mid: #6d4c41;
+      --card-bg: rgba(255, 255, 255, 0.94);
+      --shadow: 0 15px 35px rgba(212, 160, 23, 0.25);
+    }
+
     * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
 
     body {
       min-height: 100vh;
-      background: radial-gradient(circle at center, #fff9e6 0%, #ffe082 100%);
-      font-family: 'Montserrat', sans-serif;
+      background: radial-gradient(circle at center, var(--yellow-light) 0%, var(--yellow-mid) 100%);
+      font-family: 'Montserrat', system-ui, sans-serif;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -22,16 +36,19 @@
       overflow-x: hidden;
       color: #4a2c00;
       padding: 20px;
+      line-height: 1.5;
     }
 
+    main { width: 100%; display: flex; justify-content: center; padding: 20px 0; }
+
     .main-card {
-      background: rgba(255, 255, 255, 0.92);
+      background: var(--card-bg);
       backdrop-filter: blur(8px);
-      padding: 30px 25px;
+      padding: clamp(22px, 5vw, 34px) clamp(18px, 5vw, 28px);
       border-radius: 28px;
-      box-shadow: 0 15px 35px rgba(212, 160, 23, 0.25);
+      box-shadow: var(--shadow);
       text-align: center;
-      max-width: 440px;
+      max-width: 520px;
       width: 100%;
       position: relative;
       z-index: 10;
@@ -47,7 +64,7 @@
     .date-tag {
       display: inline-block;
       background: #fff3e0;
-      color: #e65100;
+      color: var(--orange-deep);
       padding: 6px 16px;
       border-radius: 20px;
       font-size: 0.85rem;
@@ -58,217 +75,823 @@
     }
 
     h1 {
-      font-size: 1.8rem;
+      font-size: clamp(1.4rem, 5vw, 1.8rem);
       color: #d84315;
       margin-bottom: 10px;
       line-height: 1.3;
     }
 
+    /* --- Girasol --- */
     .sunflower-wrap {
-      width: 130px;
-      height: 130px;
+      width: 130px; height: 130px;
       margin: 15px auto;
       position: relative;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      display: flex; align-items: center; justify-content: center;
       animation: floatFlower 3s ease-in-out infinite;
     }
-
     @keyframes floatFlower {
-      0%, 100% { transform: translateY(0px) rotate(0deg); }
+      0%, 100% { transform: translateY(0) rotate(0deg); }
       50%      { transform: translateY(-8px) rotate(4deg); }
     }
-
     .center-flower {
-      width: 46px;
-      height: 46px;
-      background: radial-gradient(circle, #5d4037 30%, #3e2723 100%);
-      border-radius: 50%;
-      z-index: 3;
+      width: 46px; height: 46px;
+      background: radial-gradient(circle, #5d4037 30%, var(--brown-dark) 100%);
+      border-radius: 50%; z-index: 3;
       box-shadow: inset 0 0 6px rgba(0,0,0,0.4);
     }
-
     .petals-ring {
-      position: absolute;
-      width: 100%;
-      height: 100%;
+      position: absolute; inset: 0;
       animation: spinRays 25s linear infinite;
     }
-
-    @keyframes spinRays { 100% { transform: rotate(360deg); } }
-
+    @keyframes spinRays { to { transform: rotate(360deg); } }
     .petal-leaf {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      width: 18px;
-      height: 60px;
+      position: absolute; top: 50%; left: 50%;
+      width: 18px; height: 60px;
       background: linear-gradient(to top, #ffca28, #fdd835, #fff176);
       border-radius: 50% 50% 20% 20%;
       transform-origin: 50% 0%;
       box-shadow: 0 0 4px rgba(255, 179, 0, 0.4);
+      transform: translate(-50%, 0) rotate(calc(var(--i) * 30deg));
     }
-
-    .p1  { transform: translate(-50%, 0) rotate(0deg); }
-    .p2  { transform: translate(-50%, 0) rotate(30deg); }
-    .p3  { transform: translate(-50%, 0) rotate(60deg); }
-    .p4  { transform: translate(-50%, 0) rotate(90deg); }
-    .p5  { transform: translate(-50%, 0) rotate(120deg); }
-    .p6  { transform: translate(-50%, 0) rotate(150deg); }
-    .p7  { transform: translate(-50%, 0) rotate(180deg); }
-    .p8  { transform: translate(-50%, 0) rotate(210deg); }
-    .p9  { transform: translate(-50%, 0) rotate(240deg); }
-    .p10 { transform: translate(-50%, 0) rotate(270deg); }
-    .p11 { transform: translate(-50%, 0) rotate(300deg); }
-    .p12 { transform: translate(-50%, 0) rotate(330deg); }
 
     .intro-text {
       font-size: 0.98rem;
-      line-height: 1.5;
-      color: #6d4c41;
+      line-height: 1.55;
+      color: var(--brown-mid);
       margin-bottom: 20px;
     }
 
-    .btn-open {
-      background: linear-gradient(135deg, #fbc02d 0%, #f57f17 100%);
+    /* --- Contador --- */
+    .counter-box {
+      background: #fff8e1;
+      border: 2px dashed var(--yellow-deep);
+      border-radius: 16px;
+      padding: 16px 14px;
+      margin: 18px 0;
+    }
+    .counter-title {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--orange-deep);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 10px;
+    }
+    .counter-values {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .counter-unit {
+      background: #fff;
+      border-radius: 12px;
+      padding: 10px 12px;
+      min-width: 62px;
+      box-shadow: 0 3px 10px rgba(212, 160, 23, 0.15);
+    }
+    .counter-number {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--orange-warm);
+      line-height: 1;
+    }
+    .counter-label {
+      font-size: 0.68rem;
+      color: var(--brown-mid);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-top: 4px;
+    }
+
+    /* --- Botones --- */
+    .btn {
+      background: linear-gradient(135deg, var(--yellow-deep) 0%, var(--orange-warm) 100%);
       color: #fff;
       border: none;
       padding: 13px 26px;
-      font-size: 1.05rem;
+      font-size: 1rem;
       font-weight: 600;
       border-radius: 30px;
       cursor: pointer;
       box-shadow: 0 6px 18px rgba(245, 127, 23, 0.4);
-      transition: all 0.25s ease;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
       display: inline-flex;
       align-items: center;
       gap: 8px;
+      font-family: inherit;
+      margin: 6px 4px;
     }
-
-    .btn-open:hover {
+    .btn:hover, .btn:focus-visible {
       transform: translateY(-2px) scale(1.03);
       box-shadow: 0 8px 22px rgba(245, 127, 23, 0.5);
+      outline: 3px solid #fff3e0;
+      outline-offset: 2px;
+    }
+    .btn:active { transform: translateY(0) scale(0.98); }
+
+    .btn-secondary {
+      background: #fff;
+      color: var(--orange-deep);
+      border: 2px solid var(--yellow-deep);
+      box-shadow: 0 4px 12px rgba(212, 160, 23, 0.15);
     }
 
+    /* --- Carta --- */
     .letter {
-      display: none;
       margin-top: 22px;
       background: #fffde7;
-      border: 1px dashed #fbc02d;
+      border: 1px dashed var(--yellow-deep);
       border-radius: 18px;
       padding: 20px;
       animation: popLetter 0.5s ease-out forwards;
+      text-align: left;
     }
-
+    .letter[hidden] { display: none; }
     @keyframes popLetter {
       from { opacity: 0; transform: scale(0.9); }
       to   { opacity: 1; transform: scale(1); }
     }
-
     .letter-content {
       font-family: 'Caveat', cursive;
-      font-size: 1.45rem;
+      font-size: clamp(1.25rem, 4vw, 1.45rem);
       line-height: 1.5;
-      color: #3e2723;
+      color: var(--brown-dark);
       white-space: pre-line;
-      text-align: left;
     }
-
     .letter-signature {
       margin-top: 15px;
       font-weight: bold;
       text-align: right;
-      color: #e65100;
+      color: var(--orange-deep);
+      font-family: 'Caveat', cursive;
+      font-size: 1.3rem;
     }
 
+    /* --- Galería --- */
+    .gallery {
+      margin: 22px 0 8px;
+      overflow: hidden;
+      border-radius: 18px;
+      position: relative;
+      box-shadow: 0 8px 22px rgba(212, 160, 23, 0.2);
+    }
+    .gallery-track {
+      display: flex;
+      transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .gallery-slide {
+      min-width: 100%;
+      aspect-ratio: 4 / 3;
+      background: #fff8e1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+    .gallery-slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .gallery-slide .placeholder {
+      color: var(--brown-mid);
+      font-size: 0.85rem;
+      text-align: center;
+      padding: 20px;
+    }
+    .gallery-nav {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 12px;
+    }
+    .dot {
+      width: 10px; height: 10px;
+      border-radius: 50%;
+      background: #ffe082;
+      border: none;
+      cursor: pointer;
+      padding: 0;
+      transition: all 0.25s;
+    }
+    .dot.active {
+      background: var(--orange-warm);
+      transform: scale(1.3);
+    }
+    .gallery-arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(255,255,255,0.85);
+      border: none;
+      width: 38px; height: 38px;
+      border-radius: 50%;
+      font-size: 1.3rem;
+      cursor: pointer;
+      color: var(--orange-deep);
+      box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+      display: flex; align-items: center; justify-content: center;
+      z-index: 2;
+    }
+    .gallery-arrow.prev { left: 8px; }
+    .gallery-arrow.next { right: 8px; }
+    .gallery-arrow:hover { background: #fff; }
+
+    /* --- Sección del juego --- */
+    .game-section {
+      margin-top: 24px;
+      padding: 18px;
+      background: #fff8e1;
+      border-radius: 18px;
+      border: 2px dashed var(--yellow-deep);
+    }
+    .game-title {
+      font-weight: 600;
+      color: var(--orange-deep);
+      margin-bottom: 6px;
+      font-size: 0.95rem;
+    }
+    .game-subtitle {
+      font-size: 0.82rem;
+      color: var(--brown-mid);
+      margin-bottom: 12px;
+    }
+    #gameCanvas {
+      width: 100%;
+      max-width: 380px;
+      height: 280px;
+      background: linear-gradient(180deg, #e1f5fe 0%, #fff9c4 100%);
+      border-radius: 14px;
+      display: block;
+      margin: 0 auto;
+      cursor: pointer;
+      touch-action: none;
+      box-shadow: inset 0 0 20px rgba(212, 160, 23, 0.1);
+    }
+    .game-hud {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 380px;
+      margin: 10px auto 0;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--brown-mid);
+    }
+    .game-hud .score {
+      color: var(--orange-warm);
+      font-size: 1.1rem;
+    }
+    .game-msg {
+      margin-top: 10px;
+      font-size: 0.9rem;
+      color: var(--orange-deep);
+      font-weight: 600;
+      min-height: 1.3em;
+    }
+
+    /* --- Música --- */
+    .music-btn {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      width: 52px; height: 52px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--yellow-deep), var(--orange-warm));
+      color: #fff;
+      border: none;
+      font-size: 1.4rem;
+      cursor: pointer;
+      box-shadow: 0 6px 18px rgba(245, 127, 23, 0.45);
+      z-index: 100;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.25s;
+    }
+    .music-btn.visible { display: flex; }
+    .music-btn:hover { transform: scale(1.1); }
+    .music-btn.playing { animation: pulse 1.6s infinite; }
+    @keyframes pulse {
+      0%, 100% { box-shadow: 0 6px 18px rgba(245, 127, 23, 0.45); }
+      50%      { box-shadow: 0 6px 26px rgba(245, 127, 23, 0.8); }
+    }
+
+    /* --- Pétalos --- */
     .petal {
       position: fixed;
       top: -30px;
-      font-size: 22px;
       user-select: none;
       pointer-events: none;
       z-index: 1;
       animation: fallDown linear forwards;
+      will-change: transform;
     }
-
     @keyframes fallDown {
       to { transform: translateY(105vh) rotate(360deg); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.001ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.001ms !important;
+      }
+      .petal { display: none; }
     }
   </style>
 </head>
 <body>
 
-  <div class="main-card">
-    <div class="date-tag">21 de Septiembre 🌼</div>
-    <h1>¡Feliz Día de las Flores Amarillas!</h1>
+  <main>
+    <article class="main-card">
+      <span class="date-tag">21 de Septiembre 🌼</span>
+      <h1>¡Feliz Día de las Flores Amarillas!</h1>
 
-    <div class="sunflower-wrap">
-      <div class="petals-ring">
-        <div class="petal-leaf p1"></div>
-        <div class="petal-leaf p2"></div>
-        <div class="petal-leaf p3"></div>
-        <div class="petal-leaf p4"></div>
-        <div class="petal-leaf p5"></div>
-        <div class="petal-leaf p6"></div>
-        <div class="petal-leaf p7"></div>
-        <div class="petal-leaf p8"></div>
-        <div class="petal-leaf p9"></div>
-        <div class="petal-leaf p10"></div>
-        <div class="petal-leaf p11"></div>
-        <div class="petal-leaf p12"></div>
+      <div class="sunflower-wrap" aria-hidden="true">
+        <div class="petals-ring">
+          <div class="petal-leaf" style="--i:0"></div>
+          <div class="petal-leaf" style="--i:1"></div>
+          <div class="petal-leaf" style="--i:2"></div>
+          <div class="petal-leaf" style="--i:3"></div>
+          <div class="petal-leaf" style="--i:4"></div>
+          <div class="petal-leaf" style="--i:5"></div>
+          <div class="petal-leaf" style="--i:6"></div>
+          <div class="petal-leaf" style="--i:7"></div>
+          <div class="petal-leaf" style="--i:8"></div>
+          <div class="petal-leaf" style="--i:9"></div>
+          <div class="petal-leaf" style="--i:10"></div>
+          <div class="petal-leaf" style="--i:11"></div>
+        </div>
+        <div class="center-flower"></div>
       </div>
-      <div class="center-flower"></div>
-    </div>
 
-    <p class="intro-text">
-      Dicen que regalar flores amarillas hoy significa prometer amor sincero
-      y traer luz para toda la vida. Tengo algo especial para ti...
-    </p>
-
-    <button id="toggleBtn" class="btn-open" onclick="openCard()">
-      <span>Toca para abrir tu carta</span> ✨
-    </button>
-
-    <div id="secretLetter" class="letter">
-      <div class="letter-content">
-Hoy inicia la primavera y no podía dejar pasar este 21 de septiembre sin recordarte lo importante que eres para mí.
-
-Estas flores nunca se marchitarán, al igual que todo el cariño y la felicidad que traes a mis días. Gracias por iluminar mi mundo con tu sonrisa.
+      <!-- ⏳ CONTADOR -->
+      <div class="counter-box">
+        <div class="counter-title">Llevamos juntos 💛</div>
+        <div class="counter-values" id="counterValues">
+          <div class="counter-unit"><div class="counter-number" id="cYears">0</div><div class="counter-label">Años</div></div>
+          <div class="counter-unit"><div class="counter-number" id="cDays">0</div><div class="counter-label">Días</div></div>
+          <div class="counter-unit"><div class="counter-number" id="cHours">0</div><div class="counter-label">Horas</div></div>
+          <div class="counter-unit"><div class="counter-number" id="cMinutes">0</div><div class="counter-label">Min</div></div>
+          <div class="counter-unit"><div class="counter-number" id="cSeconds">0</div><div class="counter-label">Seg</div></div>
+        </div>
       </div>
-      <div class="letter-signature">— Con todo mi amor 💛</div>
-    </div>
-  </div>
+
+      <p class="intro-text">
+        Dicen que regalar flores amarillas hoy significa prometer amor sincero
+        y traer luz para toda la vida. Tengo algo especial para ti...
+      </p>
+
+      <button id="toggleBtn" class="btn" type="button" aria-expanded="false" aria-controls="secretLetter">
+        <span id="btnText">Toca para abrir tu carta</span> ✨
+      </button>
+
+      <!-- 📸 GALERÍA -->
+      <div class="gallery" id="gallery" aria-label="Galería de fotos" hidden>
+        <div class="gallery-track" id="galleryTrack"></div>
+        <button class="gallery-arrow prev" onclick="moveGallery(-1)" aria-label="Foto anterior">‹</button>
+        <button class="gallery-arrow next" onclick="moveGallery(1)" aria-label="Foto siguiente">›</button>
+      </div>
+      <div class="gallery-nav" id="galleryNav" hidden></div>
+
+      <!-- 💌 CARTA -->
+      <section id="secretLetter" class="letter" hidden aria-label="Carta especial">
+        <div class="letter-content">
+Brendaaaa:
+
+Hoy inicia la primavera 🌸 y no podía dejar pasar este 21 de septiembre 🌻 sin recordarte lo importante que eres para mí. Es increíble cómo el tiempo vuela cuando estoy contigo, y cómo cada recuerdo a tu lado se ha vuelto uno de mis tesoros favoritos.
+
+Me acuerdo de esos viajes 🚐, de los campamentos de la iglesia ⛺, de las risas compartidas bajo el cielo estrellado ✨, de las canciones que cantábamos sin importar si desafinábamos 🎶… y sobre todo, me acuerdo de esos momentos en Pairumani 🏞️, donde la vista era hermosa, pero mis ojos solo te buscaban a ti.
+
+Porque sí, me encanta la vista de Pairumani, pero más me encantan tus ojos 👀💛. Me encanta tu forma de pensar 🧠✨, tan única, tan tuya, tan llena de luz. Me encanta cómo hablas de Dios 🙏, cómo lo buscas, cómo lo vives. Y me encanta la idea de caminar a tu lado, tomados de la mano 🤝, cumpliendo juntos la misión que Él tiene para nosotros.
+
+Estas flores amarillas 🌻 nunca se marchitarán, al igual que todo el cariño y la felicidad que traes a mis días. Gracias por iluminar mi mundo con tu sonrisa 😊, por ser esa persona que me inspira a ser mejor, y por dejarme soñar contigo un futuro donde Dios es el centro de todo. 💛✝️
+
+Te quiero hoy, mañana y siempre. 💛✨
+</div>
+<div class="letter-signature">— Con todo mi amor, y con Dios en el corazón 💛🙏</div>
+      </section>
+
+      <!-- 🎮 MINI-JUEGO -->
+      <div class="game-section" id="gameSection" hidden>
+        <div class="game-title">🎮 Atrapa las flores antes de abrir la carta</div>
+        <div class="game-subtitle">Toca o haz clic en las flores que caen. ¡Atrapa 5 para desbloquearla!</div>
+        <canvas id="gameCanvas" aria-label="Mini-juego de atrapar flores"></canvas>
+        <div class="game-hud">
+          <span>Atrapadas: <span class="score" id="scoreVal">0</span> / 5</span>
+          <button class="btn btn-secondary" id="restartGame" style="padding:8px 16px;font-size:0.85rem;">Reiniciar</button>
+        </div>
+        <div class="game-msg" id="gameMsg"></div>
+      </div>
+    </article>
+  </main>
+
+  <!-- 🎵 MÚSICA -->
+  <button class="music-btn" id="musicBtn" aria-label="Reproducir música">🔇</button>
+  <audio id="bgMusic" loop preload="none">
+    <source src="musica.m4a" type="audio/mpeg">
+  </audio>
 
   <script>
-    function openCard() {
-      const letter = document.getElementById('secretLetter');
-      const btn = document.getElementById('toggleBtn');
+    (function () {
+      'use strict';
 
-      letter.style.display = 'block';
-      btn.style.display = 'none';
+      /* =========================================================
+         1. CONFIGURACIÓN — EDITA AQUÍ TUS DATOS
+         ========================================================= */
 
-      for (let i = 0; i < 28; i++) {
-        setTimeout(spawnPetal, i * 80);
+      // ⏳ Fecha de inicio de la relación (AAAA, MM-1, DD). Ej: 21 sept 2023 = (2023, 8, 21)
+      const FECHA_INICIO = new Date(2026, 3, 14, 0, 0, 0);
+
+      // 📸 Rutas de tus fotos. Cambia los nombres por los tuyos.
+      const FOTOS = [
+        'fotos/foto1.jpeg',
+        'fotos/foto2.jpeg',
+        'fotos/foto3.jpeg',
+        'fotos/foto4.jpeg',
+      ];
+
+      // 🎵 Ruta de la música
+      const RUTA_MUSICA = 'musica.m4a';
+
+      // 🎮 Metas del juego
+      const FLORES_META = 5;
+
+      /* =========================================================
+         2. CONTADOR DE TIEMPO
+         ========================================================= */
+      const cYears = document.getElementById('cYears');
+      const cDays = document.getElementById('cDays');
+      const cHours = document.getElementById('cHours');
+      const cMinutes = document.getElementById('cMinutes');
+      const cSeconds = document.getElementById('cSeconds');
+
+      function actualizarContador() {
+        const ahora = new Date();
+        let diff = Math.max(0, ahora - FECHA_INICIO);
+
+        const seg = Math.floor(diff / 1000);
+        const min = Math.floor(seg / 60);
+        const hrs = Math.floor(min / 60);
+        const dias = Math.floor(hrs / 24);
+        const años = Math.floor(dias / 365.25);
+
+        // Calcula años y días restantes
+        const diasRestantes = dias - Math.floor(años * 365.25);
+
+        cYears.textContent = años;
+        cDays.textContent = diasRestantes;
+        cHours.textContent = hrs % 24;
+        cMinutes.textContent = min % 60;
+        cSeconds.textContent = seg % 60;
       }
-    }
+      actualizarContador();
+      setInterval(actualizarContador, 1000);
 
-    function spawnPetal() {
-      const items = ['🌻', '🌼', '💛', '✨', '🌸'];
-      const petal = document.createElement('div');
-      petal.classList.add('petal');
-      petal.innerText = items[Math.floor(Math.random() * items.length)];
-      petal.style.left = (Math.random() * 95) + 'vw';
-      petal.style.animationDuration = (Math.random() * 3 + 3) + 's';
-      petal.style.opacity = Math.random() * 0.7 + 0.3;
-      petal.style.fontSize = (Math.random() * 12 + 18) + 'px';
+      /* =========================================================
+         3. MÚSICA DE FONDO
+         ========================================================= */
+      const musicBtn = document.getElementById('musicBtn');
+      const bgMusic = document.getElementById('bgMusic');
 
-      document.body.appendChild(petal);
+      // Detectar si el archivo de música existe
+      fetch(RUTA_MUSICA, { method: 'HEAD' })
+        .then(r => { if (r.ok) musicBtn.classList.add('visible'); })
+        .catch(() => {});
 
-      setTimeout(() => { petal.remove(); }, 6000);
-    }
+      bgMusic.addEventListener('error', () => {
+        musicBtn.classList.remove('visible');
+      });
 
-    setInterval(spawnPetal, 450);
+      let musicPlaying = false;
+
+      musicBtn.addEventListener('click', () => {
+        if (musicPlaying) {
+          bgMusic.pause();
+          musicBtn.textContent = '🔇';
+          musicBtn.classList.remove('playing');
+        } else {
+          bgMusic.volume = 0.4;
+          bgMusic.play()
+            .then(() => {
+              musicBtn.textContent = '🔊';
+              musicBtn.classList.add('playing');
+            })
+            .catch(err => console.warn('No se pudo reproducir música:', err));
+        }
+        musicPlaying = !musicPlaying;
+      });
+
+      /* =========================================================
+         4. GALERÍA DE FOTOS
+         ========================================================= */
+      const gallery = document.getElementById('gallery');
+      const galleryTrack = document.getElementById('galleryTrack');
+      const galleryNav = document.getElementById('galleryNav');
+      let currentSlide = 0;
+
+      function buildGallery() {
+        FOTOS.forEach((src, i) => {
+          const slide = document.createElement('div');
+          slide.className = 'gallery-slide';
+          const img = document.createElement('img');
+          img.src = src;
+          img.alt = `Recuerdo ${i + 1}`;
+          img.loading = 'lazy';
+          img.onerror = () => {
+            slide.innerHTML = `<div class="placeholder">📷 Foto ${i + 1}<br><small>(${src})</small></div>`;
+          };
+          slide.appendChild(img);
+          galleryTrack.appendChild(slide);
+
+          const dot = document.createElement('button');
+          dot.className = 'dot' + (i === 0 ? ' active' : '');
+          dot.setAttribute('aria-label', `Ir a foto ${i + 1}`);
+          dot.addEventListener('click', () => goToSlide(i));
+          galleryNav.appendChild(dot);
+        });
+      }
+
+      function goToSlide(i) {
+        const total = FOTOS.length;
+        currentSlide = (i + total) % total;
+        galleryTrack.style.transform = `translateX(-${currentSlide * 100}%)`;
+        galleryNav.querySelectorAll('.dot').forEach((d, idx) => {
+          d.classList.toggle('active', idx === currentSlide);
+        });
+      }
+
+      window.moveGallery = function (dir) { goToSlide(currentSlide + dir); };
+
+      buildGallery();
+
+      // Auto-avance cada 4s
+      let autoSlide = setInterval(() => moveGallery(1), 4000);
+      gallery.addEventListener('mouseenter', () => clearInterval(autoSlide));
+      gallery.addEventListener('mouseleave', () => autoSlide = setInterval(() => moveGallery(1), 4000));
+
+      /* =========================================================
+         5. MINI-JUEGO: ATRAPA LAS FLORES
+         ========================================================= */
+      const canvas = document.getElementById('gameCanvas');
+      const ctx = canvas.getContext('2d');
+      const scoreVal = document.getElementById('scoreVal');
+      const gameMsg = document.getElementById('gameMsg');
+      const restartBtn = document.getElementById('restartGame');
+
+      let flowers = [];
+      let score = 0;
+      let gameRunning = false;
+      let gameWon = false;
+      let lastSpawn = 0;
+      let animationId = null;
+
+      function resizeCanvas() {
+        const rect = canvas.getBoundingClientRect();
+        const dpr = window.devicePixelRatio || 1;
+        canvas.width = rect.width * dpr;
+        canvas.height = rect.height * dpr;
+        ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      }
+
+      function spawnGameFlower() {
+        const size = 34;
+        flowers.push({
+          x: Math.random() * (canvas.clientWidth - size),
+          y: -size,
+          size,
+          speed: 1.2 + Math.random() * 1.3,
+          emoji: ['🌻', '🌼', '🌸', '💛'][Math.floor(Math.random() * 4)],
+          rotation: Math.random() * Math.PI * 2,
+        });
+      }
+
+      function drawGame() {
+        const w = canvas.clientWidth;
+        const h = canvas.clientHeight;
+        ctx.clearRect(0, 0, w, h);
+
+        // Suelo decorativo
+        ctx.fillStyle = 'rgba(255, 235, 130, 0.35)';
+        ctx.fillRect(0, h - 6, w, 6);
+
+        flowers.forEach(f => {
+          ctx.save();
+          ctx.translate(f.x + f.size / 2, f.y + f.size / 2);
+          ctx.rotate(f.rotation);
+          ctx.font = `${f.size}px serif`;
+          ctx.textAlign = 'center';
+          ctx.textBaseline = 'middle';
+          ctx.fillText(f.emoji, 0, 0);
+          ctx.restore();
+        });
+      }
+
+      function updateGame(dt) {
+        const w = canvas.clientWidth;
+        const h = canvas.clientHeight;
+
+        // Generar flores
+        lastSpawn += dt;
+        const spawnRate = Math.max(500, 1100 - score * 80);
+        if (lastSpawn > spawnRate) {
+          spawnGameFlower();
+          lastSpawn = 0;
+        }
+
+        // Mover y eliminar
+        flowers.forEach(f => {
+          f.y += f.speed;
+          f.rotation += 0.02;
+        });
+        flowers = flowers.filter(f => {
+          if (f.y > h) {
+            // Se escapó, pierde vida (pero no restamos, solo mensaje)
+            return false;
+          }
+          return true;
+        });
+
+        drawGame();
+      }
+
+      let lastTime = 0;
+      function gameLoop(t) {
+        if (!gameRunning) return;
+        const dt = t - lastTime;
+        lastTime = t;
+        updateGame(dt);
+        animationId = requestAnimationFrame(gameLoop);
+      }
+
+      function startGame() {
+        resizeCanvas();
+        flowers = [];
+        score = 0;
+        gameWon = false;
+        lastSpawn = 0;
+        scoreVal.textContent = '0';
+        gameMsg.textContent = '';
+        gameRunning = true;
+        lastTime = performance.now();
+        cancelAnimationFrame(animationId);
+        animationId = requestAnimationFrame(gameLoop);
+      }
+
+      function winGame() {
+        gameRunning = false;
+        gameWon = true;
+        cancelAnimationFrame(animationId);
+        gameMsg.textContent = '✨ ¡Lo lograste! Ahora sí, abre tu carta 💌';
+        setTimeout(() => {
+          document.getElementById('gameSection').hidden = true;
+          openLetter();
+        }, 1200);
+      }
+
+      function catchFlowerAt(x, y) {
+        if (!gameRunning) return;
+        // Detectar de atrás hacia adelante (las más "encima" primero)
+        for (let i = flowers.length - 1; i >= 0; i--) {
+          const f = flowers[i];
+          const cx = f.x + f.size / 2;
+          const cy = f.y + f.size / 2;
+          const dist = Math.hypot(x - cx, y - cy);
+          if (dist < f.size * 0.7) {
+            flowers.splice(i, 1);
+            score++;
+            scoreVal.textContent = score;
+            if (score >= FLORES_META) {
+              winGame();
+            }
+            return;
+          }
+        }
+      }
+
+      function getPos(e) {
+        const rect = canvas.getBoundingClientRect();
+        const clientX = e.touches ? e.touches[0].clientX : e.clientX;
+        const clientY = e.touches ? e.touches[0].clientY : e.clientY;
+        return { x: clientX - rect.left, y: clientY - rect.top };
+      }
+
+      canvas.addEventListener('click', e => {
+        const p = getPos(e);
+        catchFlowerAt(p.x, p.y);
+      });
+      canvas.addEventListener('touchstart', e => {
+        e.preventDefault();
+        const p = getPos(e);
+        catchFlowerAt(p.x, p.y);
+      }, { passive: false });
+
+      restartBtn.addEventListener('click', startGame);
+
+      window.addEventListener('resize', () => {
+        if (gameRunning) resizeCanvas();
+      });
+
+      /* =========================================================
+         6. ABRIR CARTA (con desbloqueo por juego)
+         ========================================================= */
+      const btn = document.getElementById('toggleBtn');
+      const btnText = document.getElementById('btnText');
+      const letter = document.getElementById('secretLetter');
+      const gameSection = document.getElementById('gameSection');
+      const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      let petalIntervalId = null;
+      let yaJugo = false;
+
+      btn.addEventListener('click', () => {
+        // Si aún no juega, mostrar el juego primero
+        if (!yaJugo && !letter.hidden === false) {
+          // abrir directamente si ya está abierta
+        }
+        if (!yaJugo) {
+          yaJugo = true;
+          gameSection.hidden = false;
+          gallery.hidden = false;
+          galleryNav.hidden = false;
+          btnText.textContent = 'Esperando que juegues... 🎮';
+          btn.disabled = true;
+          btn.style.opacity = '0.6';
+          btn.style.cursor = 'not-allowed';
+          startGame();
+          // scroll suave al juego
+          setTimeout(() => gameSection.scrollIntoView({ behavior: 'smooth', block: 'center' }), 200);
+          return;
+        }
+      });
+
+      function openLetter() {
+        letter.hidden = false;
+        btnText.textContent = 'Cerrar carta';
+        btn.disabled = false;
+        btn.style.opacity = '1';
+        btn.style.cursor = 'pointer';
+
+        if (!reducedMotion) startPetals();
+
+        // Reactivar botón para permitir cerrar
+        btn.onclick = closeLetter;
+        btn.setAttribute('aria-expanded', 'true');
+      }
+
+      function closeLetter() {
+        letter.hidden = true;
+        btnText.textContent = 'Abrir carta de nuevo 💌';
+        stopPetals();
+        btn.onclick = openLetterFromButton;
+        btn.setAttribute('aria-expanded', 'false');
+      }
+
+      function openLetterFromButton() {
+        openLetter();
+      }
+
+      /* =========================================================
+         7. PÉTALOS DECORATIVOS
+         ========================================================= */
+      function startPetals() {
+        if (petalIntervalId) return;
+        for (let i = 0; i < 20; i++) {
+          setTimeout(spawnPetal, i * 90);
+        }
+        petalIntervalId = setInterval(spawnPetal, 600);
+      }
+
+      function stopPetals() {
+        if (petalIntervalId) {
+          clearInterval(petalIntervalId);
+          petalIntervalId = null;
+        }
+      }
+
+      function spawnPetal() {
+        if (document.hidden) return;
+        const items = ['🌻', '🌼', '💛', '✨', '🌸'];
+        const petal = document.createElement('div');
+        petal.className = 'petal';
+        petal.textContent = items[Math.floor(Math.random() * items.length)];
+        petal.style.left = (Math.random() * 95) + 'vw';
+        petal.style.animationDuration = (Math.random() * 3 + 3) + 's';
+        petal.style.opacity = (Math.random() * 0.7 + 0.3).toFixed(2);
+        petal.style.fontSize = (Math.random() * 12 + 18) + 'px';
+        petal.setAttribute('aria-hidden', 'true');
+        document.body.appendChild(petal);
+        petal.addEventListener('animationend', () => petal.remove(), { once: true });
+      }
+
+      document.addEventListener('visibilitychange', () => {
+        if (document.hidden) stopPetals();
+        else if (!letter.hidden && !reducedMotion) startPetals();
+      });
+    })();
   </script>
 </body>
 </html>
